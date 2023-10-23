@@ -41,3 +41,8 @@ Para poder levantar nuestra prestashop necesitaremos usar dos contenedores, uno 
 Y si todo está bien tendria que salir algo así:
 
 ![imagenPrestaShop](image/prestashop.png)
+
+
+Para comprobar que funciona la base de datos tenemos que darle a crear la base de datos y darle a mysql y rellenar los campos:
+![imagen1](image/mysql1.png)
+![imagen2](image/mysql2.png)
