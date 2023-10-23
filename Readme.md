@@ -30,3 +30,14 @@ Para poder levantar nuestra prestashop necesitaremos usar dos contenedores, uno 
 <br>
 
 4. Y por último, ahora que tenemos los contenedores creados, tenemos que volver a definir nuestra red personalizada, se define de la misma manera que en los [contenedores](#enlace)
+
+<br>
+
+5. Ahora que ya está hecho solo nos faltaría iniciar los contenedores y entrar desde el navegador haber si está bien
+    + Para iniciarlos: `docker compose up -d`
+    + Para entrar desde el navegador: `localhost:8080`
+
+    
+Y si todo está bien tendria que salir algo así:
+
+![imagenPrestaShop](image/prestashop.png)
