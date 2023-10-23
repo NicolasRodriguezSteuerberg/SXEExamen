@@ -1,0 +1,38 @@
+services:
+  mysql:
+    # le ponemos nombre al contenedor (opcional)
+    container_name: my_mysql
+    # cogemos la imagen de mysql
+    image: mysql:5.7
+    # cambiamos la configuración del servicio
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=prestashop
+    networks:
+      - prestashop-net
+
+  prestashop:
+    # le ponemos nombre al contenedor (opcional)
+    container_name: prestashop
+    # cogemos la imagen de prestashop
+    image: prestashop/prestashop:latest
+    # mapeamos los puertos
+    ports:
+      - "8080:80"
+    # ponemos la configuración de la prestashop
+    environment:
+      # "enlazamos los contenedores"
+      - DB_SERVER=mysql
+      - DB_NAME=prestashop
+      - DB_USER=root
+      - DB_PASSWD=admin
+      # para evitar descargarlo manualmente
+      - PS_INSTALL_AUTO=1
+      - PS_DOMAIN=localhost:8080
+    # para que funcione nuestro prestashop tiene que tener el que depende de mysql
+    depends_on:
+      - mysql
+    networks:
+      - prestashop-net
+networks:
+  prestashop-net:
